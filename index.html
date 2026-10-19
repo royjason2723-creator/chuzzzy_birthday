@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Secret for Chuzzzzy 💗</title>
+<style>
+:root{--pink:#ffb5c8;--hot:#ff5d8f;--yellow:#ffe58a;--cream:#fff9ed;--ink:#392b3b;--blue:#b8e8ff;--green:#c9f3c5}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff3f7,#fffbe9 55%,#eaf8ff);min-height:100vh;overflow-x:hidden}
+button,input{font:inherit}button{cursor:pointer;border:0;border-radius:999px;padding:13px 21px;font-weight:800;transition:transform .18s,filter .18s;box-shadow:0 5px 0 #d44c79}button:hover{transform:translateY(-2px);filter:brightness(1.03)}button:active{transform:translateY(2px);box-shadow:0 2px 0 #d44c79}
+.primary{background:var(--hot);color:white}.soft{background:white;color:var(--ink);box-shadow:0 5px 0 #d8cbd3}.yellow{background:var(--yellow);color:var(--ink);box-shadow:0 5px 0 #d7b84e}
+.screen{display:none;min-height:100vh;padding:28px 16px 48px;align-items:center;justify-content:center}.screen.active{display:flex}
+.panel{width:min(760px,100%);background:#ffffffd9;border:3px solid white;border-radius:30px;padding:clamp(22px,5vw,42px);box-shadow:0 18px 50px #a76c8820;text-align:center;position:relative}
+.kicker{display:inline-block;background:#fff0a9;padding:7px 13px;border-radius:99px;font-size:.8rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+h1{font-size:clamp(2.1rem,7vw,4.3rem);line-height:1.02;margin:18px 0 12px;letter-spacing:-.05em}
+h2{font-size:clamp(1.7rem,5vw,2.5rem);margin:12px 0}
+p{line-height:1.65}.muted{opacity:.72}.mascot{font-size:clamp(4rem,13vw,7rem);display:block;filter:drop-shadow(0 7px 0 #ffb5c866);animation:bob 2.5s ease-in-out infinite}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center}.field{display:block;width:min(280px,100%);margin:16px auto 10px;padding:14px 16px;border:2px solid #ffd2df;border-radius:15px;background:white;text-align:center;outline:none}.field:focus{border-color:var(--hot)}
+.note{font-size:.88rem;opacity:.7}.error{color:#c22b59;min-height:1.4em;font-weight:700}
+.topline{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px;font-size:.85rem;font-weight:800}
+.progress{height:9px;border-radius:99px;background:#ffe2eb;overflow:hidden;flex:1}.progress span{display:block;width:0;height:100%;background:var(--hot);transition:width .3s}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}.gift{background:#fff4f8;border:2px dashed #ff9fba;border-radius:20px;padding:18px 8px;box-shadow:none;min-height:140px}.gift .emoji{font-size:3rem;display:block;margin-bottom:8px}.gift small{display:block;font-size:.8rem}
+.message{display:none;background:#fff8d9;border-radius:18px;padding:18px;margin-top:14px;animation:pop .4s ease}.message.show{display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.photo{min-height:150px;background:white;padding:9px 9px 15px;box-shadow:0 6px 15px #5a304018;transform:rotate(-2deg);border-radius:6px}.photo:nth-child(2){transform:rotate(2deg);background:#fff2c9}.photo:nth-child(3){transform:rotate(-1deg);background:#e9f8ff}.photo .placeholder{height:105px;display:grid;place-items:center;background:linear-gradient(135deg,#ffd6e2,#fff0a9);font-size:2.3rem;border-radius:4px}.photo:nth-child(2) .placeholder{background:linear-gradient(135deg,#d7f5d1,#bdeaff)}.photo:nth-child(3) .placeholder{background:linear-gradient(135deg,#e8dcff,#ffd6e2)}.photo label{display:block;margin-top:9px;font-weight:800;font-size:.82rem}
+.cake{font-size:6rem;line-height:1.4;display:block;animation:bob 2s ease-in-out infinite}.letter{background:#fff8dc;border:2px solid #f3d99a;border-radius:12px;padding:24px;text-align:left;line-height:1.85;white-space:pre-line}
+footer{margin-top:24px;font-size:.78rem;opacity:.65}
+.float{position:fixed;pointer-events:none;z-index:10;animation:rise 3.8s linear forwards;font-size:24px}
+.hidden{display:none!important}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes pop{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:520px){.gifts{gap:7px}.gift{padding:13px 4px;min-height:125px}.gift .emoji{font-size:2.4rem}.gallery{gap:7px}.photo{padding:6px 6px 12px}.photo .placeholder{height:82px}.photo label{font-size:.72rem}.topline{font-size:.75rem}}
+</style>
+</head>
+<body>
+<!-- PERSONALIZE: change the name, PIN, messages and sender below in the CONFIG section. -->
+<section class="screen active" id="lock">
+  <div class="panel">
+    <span class="kicker">TOP SECRET • BESTIE FILE #2110</span>
+    <span class="mascot" aria-label="playful cartoon">🧒🏻🍑</span>
+    <h1>Oi, Chuzzzzy!</h1>
+    <p>Someone has hidden a tiny birthday universe for you.<br>But first… prove you're the birthday legend. 😼</p>
+    <p class="muted">Hint: your special day in DDMM format 👀</p>
+    <input class="field" id="pin" type="password" inputmode="numeric" maxlength="8" placeholder="Enter secret code" aria-label="Secret code">
+    <div class="error" id="pinError"></div>
+    <button class="primary" id="unlockBtn">Unlock the chaos ✨</button>
+    <p class="note">Psst… headphones recommended 🎧</p>
+  </div>
+</section>
+
+<section class="screen" id="welcome">
+  <div class="panel">
+    <span class="kicker">UNLOCKED! 🔓</span><span class="mascot">🎉🧒🏻🎈</span>
+    <h1>HAPPY BIRTHDAY,<br><span style="color:var(--hot)">CHUZZZZY!</span></h1>
+    <p>Official notice: today you are allowed to be extra dramatic, eat cake, and act like the main character. No complaints accepted. 😌</p>
+    <p>Ready to open your totally-not-suspicious gifts?</p>
+    <button class="primary" data-go="gifts">LET'S GOOOO →</button>
+    <footer>Made with friendship, chaos & a suspicious amount of affection 💗</footer>
+  </div>
+</section>
+
+<section class="screen" id="gifts">
+  <div class="panel">
+    <div class="topline"><span>MISSION: BIRTHDAY</span><div class="progress"><span id="progressBar"></span></div><span id="progressText">0/3</span></div>
+    <span class="kicker">PICK YOUR PRESENTS</span>
+    <h2>Choose all 3 gifts 🎁</h2>
+    <p class="muted">No stealing. Okay, maybe a little stealing.</p>
+    <div class="gifts">
+      <button class="gift" data-gift="0"><span class="emoji">🎁</span><b>Gift #1</b><small>Tap to reveal</small></button>
+      <button class="gift" data-gift="1"><span class="emoji">💌</span><b>Gift #2</b><small>Tap to reveal</small></button>
+      <button class="gift" data-gift="2"><span class="emoji">🍰</span><b>Gift #3</b><small>Tap to reveal</small></button>
+    </div>
+    <div class="message" id="giftMessage" aria-live="polite"></div>
+    <button class="primary hidden" id="toGallery">Unlock the memory wall →</button>
+  </div>
+</section>
+
+<section class="screen" id="gallery">
+  <div class="panel">
+    <span class="kicker">THE MEMORY WALL 📸</span>
+    <h2>Certified iconic moments</h2>
+    <p>Replace these emoji placeholders with your own photos before sending the link.</p>
+    <div class="gallery">
+      <div class="photo"><div class="placeholder">📸💗</div><label>Memory #1</label></div>
+      <div class="photo"><div class="placeholder">😂✨</div><label>Our chaos</label></div>
+      <div class="photo"><div class="placeholder">🫶🏻🌈</div><label>Bestie energy</label></div>
+    </div>
+    <p class="muted">Tip: keep the photos kind, funny and comfortable for both of you.</p>
+    <button class="primary" data-go="cake">One last birthday mission →</button>
+  </div>
+</section>
+
+<section class="screen" id="cake">
+  <div class="panel">
+    <span class="kicker">CAKE PROTOCOL 🍰</span>
+    <h2>Make a wish, Chuzzzzy!</h2>
+    <span class="cake" id="cakeEmoji">🎂</span>
+    <p id="cakeText">Tap the button to blow out the candles.</p>
+    <button class="yellow" id="blowBtn">3… 2… 1… POOF! 💨</button>
+    <div class="message" id="cakeMessage">WISH SENT TO THE UNIVERSE! 🌠 May your year be full of happiness, good people, big wins and the kind of laughter that makes your stomach hurt. 💗</div>
+    <button class="primary hidden" id="toLetter">Open your letter 💌</button>
+  </div>
+</section>
+
+<section class="screen" id="letter">
+  <div class="panel">
+    <span class="kicker">A LITTLE NOTE FROM ME 💗</span>
+    <h2>For my Chuzzzzy 🫶🏻</h2>
+    <div class="letter" id="letterText">Happy Birthday, Chuzzzzy! 💗
+
+I hope this new year brings you the kind of happiness you deserve, people who understand you, and a million reasons to smile.
+
+Thank you for being your own wonderfully chaotic self. Never forget that you matter, your dreams matter, and you deserve good things—not just on your birthday, but every day.
+
+Keep laughing loudly, keep being you, and please never stop being a little dramatic. The world would be boring without it. 😭😂
+
+No matter how busy life gets, I hope we keep collecting random memories, silly jokes and moments that we'll laugh about later.
+
+Happy Birthday once again, bestie. I'm always rooting for you. 🫶🏻
+
+— From your favourite human, [YOUR NAME]</div>
+    <p class="muted">Made just for you. No copy-paste birthday energy allowed. 💌</p>
+    <button class="primary" id="finaleBtn">One final surprise 🎊</button>
+    <div class="message" id="finaleMessage">MISSION COMPLETE: CHUZZZZY HAS BEEN OFFICIALLY SPOILED. 🥳💗<br>Now go eat cake and enjoy your day!</div>
+    <footer>End of secret file. Friendship level: UNLIMITED ♾️</footer>
+  </div>
+</section>
+<script>
+/* ===================== PERSONALIZE THIS PART =====================
+   PIN: 2110 means 21 October. This is a fun lock, NOT real security:
+   anyone who can view the page source can see the code.
+*/
+const CONFIG = {
+  recipient: "Chuzzzzy",
+  pin: "2110",
+  sender: "Vishwas",
+  birthday: "21 October 2026",
+  giftMessages: [
+    "🎁 GIFT #1: One unlimited pass to be dramatic, steal snacks and still be loved. Terms & conditions: none. 😂",
+    "💌 GIFT #2: A reminder that you're genuinely special. I hope you always have people around you who make you feel appreciated and safe. 🫶🏻",
+    "🍰 GIFT #3: Your birthday cake is calorie-free in this website. In real life… I cannot make promises. 😭🎂"
+  ],
+  letter: `Happy Birthday, Chuzzzzy! 💗
+
+I hope this new year brings you the kind of happiness you deserve, people who understand you, and a million reasons to smile.
+
+Thank you for being your own wonderfully chaotic self. Never forget that you matter, your dreams matter, and you deserve good things—not just on your birthday, but every day.
+
+Keep laughing loudly, keep being you, and please never stop being a little dramatic. The world would be boring without it. 😭😂
+
+No matter how busy life gets, I hope we keep collecting random memories, silly jokes and moments that we'll laugh about later.
+
+Happy Birthday once again, bestie. I'm always rooting for you. 🫶🏻
+
+— From your favourite human, Vishwas`
+};
+const $ = s => document.querySelector(s);
+const screens = [...document.querySelectorAll(".screen")];
+function go(id){screens.forEach(s=>s.classList.toggle("active",s.id===id));window.scrollTo({top:0,behavior:"smooth"});if(id==="welcome")confetti(28);}
+function confetti(n=18){const bits=["💗","🎉","✨","🎈","🌸","⭐"];for(let i=0;i<n;i++){const e=document.createElement("span");e.className="float";e.textContent=bits[Math.floor(Math.random()*bits.length)];e.style.left=Math.random()*100+"vw";e.style.bottom="-30px";e.style.animationDuration=(2.5+Math.random()*2)+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),5000);}}
+$("#unlockBtn").addEventListener("click",()=>{if($("#pin").value.trim()===CONFIG.pin){$("#pinError").textContent="";go("welcome");confetti(30);}else{$("#pinError").textContent="Nope! Try the birthday hint again 😼";$("#pin").value="";}});
+$("#pin").addEventListener("keydown",e=>{if(e.key==="Enter")$("#unlockBtn").click();});
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+const opened=new Set();
+document.querySelectorAll("[data-gift]").forEach(b=>b.addEventListener("click",()=>{const i=Number(b.dataset.gift);opened.add(i);b.querySelector(".emoji").textContent=["🎊","💖","🧁"][i];b.querySelector("small").textContent="Opened!";b.style.background=["#fff0a9","#e9f8ff","#e4f8df"][i];$("#giftMessage").innerHTML=CONFIG.giftMessages[i];$("#giftMessage").classList.add("show");$("#progressBar").style.width=(opened.size/3*100)+"%";$("#progressText").textContent=opened.size+"/3";confetti(10);if(opened.size===3)$("#toGallery").classList.remove("hidden");}));
+$("#toGallery").addEventListener("click",()=>go("gallery"));
+$("#blowBtn").addEventListener("click",()=>{$("#cakeEmoji").textContent="🍰";$("#cakeText").textContent="Candles blown out. Wish officially launched!";$("#cakeMessage").classList.add("show");$("#toLetter").classList.remove("hidden");confetti(35);$("#blowBtn").disabled=true;$("#blowBtn").textContent="Wish sent! 💫";});
+$("#toLetter").addEventListener("click",()=>{ $("#letterText").textContent=CONFIG.letter.replaceAll("YOUR NAME",CONFIG.sender);go("letter");});
+$("#finaleBtn").addEventListener("click",()=>{$("#finaleMessage").classList.add("show");confetti(65);$("#finaleBtn").textContent="Happy Birthday, Chuzzzzy! 💗";});
+</script>
+</body>
+</html>
